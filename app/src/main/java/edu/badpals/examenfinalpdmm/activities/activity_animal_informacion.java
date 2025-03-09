@@ -60,8 +60,6 @@ public class activity_animal_informacion extends AppCompatActivity {
         animalId = Helpers.getID_Animal(this);
         //El id que pasamos al metodo de cargar es el que acabamos de obtener con el intent
         cargarInfoAnimal(animalId);
-
-
         setOCL();
 
 
@@ -85,6 +83,17 @@ public class activity_animal_informacion extends AppCompatActivity {
         });
     }
 
+    public void cargarInfoAnimal(int id){
+        Animal animal = AnimalRepository.getAnimalById(id);
+
+        if (animal == null) {
+            Toast.makeText(this, "No se encontró el animal con ID: " + id, Toast.LENGTH_SHORT).show();
+            return;
+        }
+        cargarVM(animal);
+
+    }
+
     private void cargarVM(Animal animal) {
 
         animal_Detalle_viewModel = new ViewModelProvider(this).get(Animal_Detalle_viewModel.class);
@@ -98,20 +107,6 @@ public class activity_animal_informacion extends AppCompatActivity {
         });
 
         animal_Detalle_viewModel.setAnimal(animal);
-    }
-
-
-
-    public void cargarInfoAnimal(int id){
-        Animal animal = AnimalRepository.getAnimalById(id);
-
-        if (animal == null) {
-            Toast.makeText(this, "No se encontró el animal con ID: " + id, Toast.LENGTH_SHORT).show();
-            return;
-        }
-        cargarVM(animal);
-
-
     }
 
     private void cargarAnimal(Animal result) {

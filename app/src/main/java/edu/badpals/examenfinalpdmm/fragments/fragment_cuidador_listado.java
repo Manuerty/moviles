@@ -11,10 +11,10 @@ import edu.badpals.examenfinalpdmm.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link animal_listado#newInstance} factory method to
+ * Use the {@link fragment_cuidador_listado#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class animal_listado extends Fragment {
+public class fragment_cuidador_listado extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,7 +25,7 @@ public class animal_listado extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public animal_listado() {
+    public fragment_cuidador_listado() {
         // Required empty public constructor
     }
 
@@ -35,11 +35,11 @@ public class animal_listado extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment animal_listado.
+     * @return A new instance of fragment fragment_cuidador_listado.
      */
     // TODO: Rename and change types and number of parameters
-    public static animal_listado newInstance(String param1, String param2) {
-        animal_listado fragment = new animal_listado();
+    public static fragment_cuidador_listado newInstance(String param1, String param2) {
+        fragment_cuidador_listado fragment = new fragment_cuidador_listado();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -60,6 +60,6 @@ public class animal_listado extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_animal_listado, container, false);
+        return inflater.inflate(R.layout.fragment_cuidador_listado, container, false);
     }
 }
